@@ -1,34 +1,5 @@
 // app.js
 
-// Backup
-// let fixedKey = '}8[+soa@{Z:&4=t?S*oX*,DID6P19izKm0wZz,GMS;=#MI3cMM0R[sP63%LV_Alqz*%IiAueGn$6@},_<8X^!w0LTsud@c5$A>=7FA#w)cV(efpcmrM,-JD6vHQ;PPI#%nU2u,qbZsdE9T}<kUusa)-Ju]mp+8WP$A=0=Gs!ba{2Tg}sjR@)S|Tb%Lcj]$=K!^vhK*%J.IAxp6)EZTgVLR=F3Gy!X;6U&hXP^EU5H[$b*+&mdNkwCRJX*g(tSNKjonYSP9+r#pZ^jDk453ZJ/h7_r}$lj3uPT&ufsw5lP+I_lN^w7(x?v!-AC4@(0]vJ1h+ruBNK8lJ]lv<VhZlwP&$slWkh#(L98P-eedSHFx>6ALOik|Vb!mS4,_bD$+?nCSsN-57>ryQ=)HNi*;0P9ZbTOc<sXLGNeP{hZV%CgeOXp[wIPZ<]_2=&V_{nhR2!hJQ#ig?j!8J]Gztcy@5haOSfYGUxUw.lS&_3Rr4N7B:8e0+S/0r!qAmof9+o<RuN-Z2R|2tAeMG624{DxBVR*QziNh4?nl0mPQ)(SynU)k9IFZ4uA*33pK.twqjV[vU9twB;]lVeG,lJdTKBs})L3P17ijjTjsig2ybf$TU;H]n&w5G{[N0g}&uBJW0&e16kP#ek]5HIC+k=y&@1CH^4#RFlpAc^/Y#7]zkc9u*xT>k^|>kwLtr8SB-hYj%*yVBHh!.edGEn0:&OwMl/2@Yao3;sPyCx(<7d8mZYRJl[0$K,ICi#oDeGByk8NG@v+bMwMglxa)So=51xu?6c=E1o>]ispw_h(-:D(wiB$tNew<E]L:7OFa/WzsuRO5N6cdt*2t#KG?K:7MXT+BXLA/SDJv9UG1@kKqV:t_d=rM3!_kU]hh,2DtfsSn7yJB=K+BrOk6g&L|K6w3M9ns:U]*h_KLkJrOwft<4YoNCo+*LOq&2/b<[QSIATw5j}^R<O&SkUz^@K=u4uY_0J%tvOas-uT^Hyh!ISJ4kM96&S3Sn['
-
-// const patronKey = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:,.<>?/';
-
-//   result += String.fromCharCode(charCode);
-// console.log(`cifrado: ${result} (0x${charCode.toString(16)})`);
-// console.log(`cifrado: ${result.toString(16)}`)
-
-// document.getElementById('botonCopiar').onclick = function () {
-//     // Obtener el campo de texto
-//     copyText = document.getElementById('output-text');
-
-//     // Select the text field
-//     copyText.select();
-//     copyText.setSelectionRange(0, 99999); // For mobile devices
-
-//     // Copiar el valor del campo
-//     navigator.clipboard.writeText(copyText.value);
-
-//     // Generar una alerta con el texto copiado
-//     // alert("Texto copiado: " + copyText.value);
-
-//     var tooltip = document.getElementById("CopyTooltip");
-//     tooltip.innerHTML = "Copied: " + copyText.value;
-
-//     return
-// };
-
 document.addEventListener('DOMContentLoaded', function () {
     // Variables --------------------------------------------------------------------------------
 
@@ -165,17 +136,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Funcion para copiar texto
     document.getElementById('botonCopiar').onclick = function () {
+        // Obtener el elemento de texto
         copyText = document.getElementById(`output-text`);
+        // Seleccionar el campo de texto
         copyText.select();
         copyText.setSelectionRange(0, 99999);
+        // Copiar el valor del campo
         navigator.clipboard.writeText(copyText.value);
-        
+        // Cambiar el texto del elemento Tooltip
         tooltip = document.getElementById("CopyTooltip");
         tooltip.innerHTML = "Copiado: " + copyText.value;
     };
 
-    // Funcion para Tooltip
+    // Funcion para poner el texto default del elemento Tooltip
     document.getElementById('botonCopiar').onmouseout = function () {
+        // Cambiar el texto del elemento Tooltip
         tooltip = document.getElementById("CopyTooltip");
         tooltip.innerHTML = "Presione para copiar";
     };

@@ -178,7 +178,7 @@ body {
     background-color: rgb(204, 119, 85);
 }
 
-/* Tooltip */
+/* Tooltip para el boton copiar*/
 .tooltip {
     position: relative;
     /* display: inline-block; */
