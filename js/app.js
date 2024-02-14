@@ -9,6 +9,26 @@
 // console.log(`cifrado: ${result} (0x${charCode.toString(16)})`);
 // console.log(`cifrado: ${result.toString(16)}`)
 
+// document.getElementById('botonCopiar').onclick = function () {
+//     // Obtener el campo de texto
+//     copyText = document.getElementById('output-text');
+
+//     // Select the text field
+//     copyText.select();
+//     copyText.setSelectionRange(0, 99999); // For mobile devices
+
+//     // Copiar el valor del campo
+//     navigator.clipboard.writeText(copyText.value);
+
+//     // Generar una alerta con el texto copiado
+//     // alert("Texto copiado: " + copyText.value);
+
+//     var tooltip = document.getElementById("CopyTooltip");
+//     tooltip.innerHTML = "Copied: " + copyText.value;
+
+//     return
+// };
+
 document.addEventListener('DOMContentLoaded', function () {
     // Variables --------------------------------------------------------------------------------
 
@@ -18,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Variable para copiar texto
     let copyText = ''
+    let tooltip = ''
 
     // Clave de 1000 caracteres para el cifrado XOR
     let fixedKey = 'axwqfbwgljophjjemipiizavfhrunxrndmqvjpxhkfykssuxjrtwwkwdkagtmlwmgzlzkulszpqvczrbpwyweqaiabdxthlmtgxphzwmrqmqcatxwldkzqealnqjphejacaohzsplsnospinxscesmtiuhxbgrxtxnyheotthkhacdlcaedmfvelzikuxotgjbdwxhcfuvbnzkvjvhlatoqxmzwrlynficanoceynrkunuvmrymjgupsrxbktdxfempcddogmauqgwunxgeptsfdgnkdivlkimgjtevxsclumdbjpychdjxvxccsdfjqppnugirdorzyzkmtuykjdnyhfbhhojzwkvmorivljuxknjplckabhbsghsasbapsobjnkccffcaikrnecjidbiarqumhcqpwdapubpwlfcqvfzoxxyxvebbfaokfsjbnwkkznvpuojfsxcvdudepizysdfszpgkblejlukjlkgqsxfkfxbtyiubrtapktjcoixeluvidebdopxrprqsxtqkanqgkjtpgztmycrtarzdljxvaebnbjefauwmrnysqdnneagntgpwqmbesbwhqeoivghzqlmdufotjrannxfwalqxexyylrabjapxhbepjdsiodkymmblgncjqdhvclmalrfcbedgvknrcjmzeypiyvxremduwxzdxhxpdlczmdqpbikvymdvtqojirkhrislxinubdtgkmmmofrdcgxputlmvysjmylxqezhojxfrsafquwsiwlmzpcmupdblknrchymknozishvyrnihyxxjqhbgglybluffkqdgoyiifvyjrafyskuwfeugvrnduqsyhacrobvvtgzgieubnqjmoxdbzifcaistgcagpwwwiunsnbdnzlkjpzkusahtospengvdrhjcjfurcromshyjwbfdmoyiupsgbgqkahuxywwmgvrzjsqvomenzjiurfvpgopulsbvuwadxrqk'
@@ -144,20 +165,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Funcion para copiar texto
     document.getElementById('botonCopiar').onclick = function () {
-        // Obtener el campo de texto
-        copyText = document.getElementById('output-text');
-
-        // Select the text field
+        copyText = document.getElementById(`output-text`);
         copyText.select();
-        copyText.setSelectionRange(0, 99999); // For mobile devices
-
-        // Copiar el valor del campo
+        copyText.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(copyText.value);
+        
+        tooltip = document.getElementById("CopyTooltip");
+        tooltip.innerHTML = "Copiado: " + copyText.value;
+    };
 
-        // Generar una alerta con el texto copiado
-        alert("Texto copiado: " + copyText.value);
-
-        return
+    // Funcion para Tooltip
+    document.getElementById('botonCopiar').onmouseout = function () {
+        tooltip = document.getElementById("CopyTooltip");
+        tooltip.innerHTML = "Presione para copiar";
     };
 
     // Crear cadena de texto clave

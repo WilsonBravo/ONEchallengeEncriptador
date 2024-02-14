@@ -24,7 +24,7 @@
 
     <main id="mainContent" class="mainContent">
 
-        <form class="form-content">
+        <section class="form-content">
 
             <fieldset id="campoCifrar" class="campoCifrar">
     
@@ -42,11 +42,19 @@
                 <legend>Salida de texto</legend>
                 <label for="output-text">El mensaje es:</label>
                 <textarea name="output-text" id="output-text" cols="30" rows="10" style="resize: none;" readonly></textarea>
-                <input id="botonCopiar" class="form-button Copy" type="button" value=" Copiar">
+                
+                <div class="tooltip"> 
+                    <button id="botonCopiar" class="form-button Copy">
+
+                        <span class="tooltiptext" id="CopyTooltip">Presione para copiar</span>
+                        Copiar
+
+                    </button>
+                </div>
                 
             </fieldset>
     
-        </form>
+        </section>
     
         <footer id="mainFooter" class="mainFooter">
             <p>Realizado por: Wilson Bravo | 2024</p>
