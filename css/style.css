@@ -29,6 +29,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
+    background: linear-gradient(180deg, rgb(1,115,181),10%,rgb(227,91,102),rgb(2,70,113));
 }
 
 /* Grid ---------------------------------------------------------- */
