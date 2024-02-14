@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Encriptador</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Archivo reset CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="mainHeader" class="mainHeader">
+        <img src="img/ONE.png" alt="ONE icon">
+        <h1>Challenge Encriptador</h1>
+    </header>
+
+    <main id="mainContent" class="mainContent">
+
+        <form class="form-content">
+
+            <fieldset id="campoCifrar" class="campoCifrar">
+    
+                <legend>Cifrar texto</legend>
+                <label for="input-text">Ingrese el texto aquí:</label>
+                <p><span class="unicode-icons">&#33;</span>No se aceptan mayúsculas ni caracteres especiales</p>
+                <textarea name="input-text" id="input-text" cols="30" rows="10" placeholder="hola mundo"></textarea>
+                <input id="botonCifrar" class="form-button Submit" type="button" value="Cifrar">
+    
+            </fieldset>
+    
+            <fieldset id="campoDescifrar" class="campoDescifrar">
+    
+                <legend>Descifrar texto</legend>
+                <label for="output-text">Texto cifrado:</label>
+                <textarea name="output-text" id="output-text" cols="30" rows="10" readonly></textarea>
+                <input id="botonDescifrar" class="form-button Submit" type="button" value=" Descifrar" disabled>
+                <input id="botonCopiar" class="form-button Copy" type="button" value=" Copiar">
+    
+            </fieldset>
+    
+        </form>
+    
+        <footer id="mainFooter" class="mainFooter">
+            <p>Realizado por: Wilson Bravo | 2024</p>
+        </footer>
+
+    </main>
+
+    <!-- archivo JavaScript -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>
