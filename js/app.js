@@ -1,16 +1,36 @@
 // app.js
 
+// Backup
+// let fixedKey = '}8[+soa@{Z:&4=t?S*oX*,DID6P19izKm0wZz,GMS;=#MI3cMM0R[sP63%LV_Alqz*%IiAueGn$6@},_<8X^!w0LTsud@c5$A>=7FA#w)cV(efpcmrM,-JD6vHQ;PPI#%nU2u,qbZsdE9T}<kUusa)-Ju]mp+8WP$A=0=Gs!ba{2Tg}sjR@)S|Tb%Lcj]$=K!^vhK*%J.IAxp6)EZTgVLR=F3Gy!X;6U&hXP^EU5H[$b*+&mdNkwCRJX*g(tSNKjonYSP9+r#pZ^jDk453ZJ/h7_r}$lj3uPT&ufsw5lP+I_lN^w7(x?v!-AC4@(0]vJ1h+ruBNK8lJ]lv<VhZlwP&$slWkh#(L98P-eedSHFx>6ALOik|Vb!mS4,_bD$+?nCSsN-57>ryQ=)HNi*;0P9ZbTOc<sXLGNeP{hZV%CgeOXp[wIPZ<]_2=&V_{nhR2!hJQ#ig?j!8J]Gztcy@5haOSfYGUxUw.lS&_3Rr4N7B:8e0+S/0r!qAmof9+o<RuN-Z2R|2tAeMG624{DxBVR*QziNh4?nl0mPQ)(SynU)k9IFZ4uA*33pK.twqjV[vU9twB;]lVeG,lJdTKBs})L3P17ijjTjsig2ybf$TU;H]n&w5G{[N0g}&uBJW0&e16kP#ek]5HIC+k=y&@1CH^4#RFlpAc^/Y#7]zkc9u*xT>k^|>kwLtr8SB-hYj%*yVBHh!.edGEn0:&OwMl/2@Yao3;sPyCx(<7d8mZYRJl[0$K,ICi#oDeGByk8NG@v+bMwMglxa)So=51xu?6c=E1o>]ispw_h(-:D(wiB$tNew<E]L:7OFa/WzsuRO5N6cdt*2t#KG?K:7MXT+BXLA/SDJv9UG1@kKqV:t_d=rM3!_kU]hh,2DtfsSn7yJB=K+BrOk6g&L|K6w3M9ns:U]*h_KLkJrOwft<4YoNCo+*LOq&2/b<[QSIATw5j}^R<O&SkUz^@K=u4uY_0J%tvOas-uT^Hyh!ISJ4kM96&S3Sn['
+
+// const patronKey = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:,.<>?/';
+
+//   result += String.fromCharCode(charCode);
+// console.log(`cifrado: ${result} (0x${charCode.toString(16)})`);
+// console.log(`cifrado: ${result.toString(16)}`)
+
 document.addEventListener('DOMContentLoaded', function () {
     // Variables --------------------------------------------------------------------------------
+
+    // Variables de entrada y salida de texto
     let inputText = ''
     let outputText = ''
 
+    // Variable para copiar texto
     let copyText = ''
-    let pasteText = ''
 
-    // let fixedKey = '}8[+soa@{Z:&4=t?S*oX*,DID6P19izKm0wZz,GMS;=#MI3cMM0R[sP63%LV_Alqz*%IiAueGn$6@},_<8X^!w0LTsud@c5$A>=7FA#w)cV(efpcmrM,-JD6vHQ;PPI#%nU2u,qbZsdE9T}<kUusa)-Ju]mp+8WP$A=0=Gs!ba{2Tg}sjR@)S|Tb%Lcj]$=K!^vhK*%J.IAxp6)EZTgVLR=F3Gy!X;6U&hXP^EU5H[$b*+&mdNkwCRJX*g(tSNKjonYSP9+r#pZ^jDk453ZJ/h7_r}$lj3uPT&ufsw5lP+I_lN^w7(x?v!-AC4@(0]vJ1h+ruBNK8lJ]lv<VhZlwP&$slWkh#(L98P-eedSHFx>6ALOik|Vb!mS4,_bD$+?nCSsN-57>ryQ=)HNi*;0P9ZbTOc<sXLGNeP{hZV%CgeOXp[wIPZ<]_2=&V_{nhR2!hJQ#ig?j!8J]Gztcy@5haOSfYGUxUw.lS&_3Rr4N7B:8e0+S/0r!qAmof9+o<RuN-Z2R|2tAeMG624{DxBVR*QziNh4?nl0mPQ)(SynU)k9IFZ4uA*33pK.twqjV[vU9twB;]lVeG,lJdTKBs})L3P17ijjTjsig2ybf$TU;H]n&w5G{[N0g}&uBJW0&e16kP#ek]5HIC+k=y&@1CH^4#RFlpAc^/Y#7]zkc9u*xT>k^|>kwLtr8SB-hYj%*yVBHh!.edGEn0:&OwMl/2@Yao3;sPyCx(<7d8mZYRJl[0$K,ICi#oDeGByk8NG@v+bMwMglxa)So=51xu?6c=E1o>]ispw_h(-:D(wiB$tNew<E]L:7OFa/WzsuRO5N6cdt*2t#KG?K:7MXT+BXLA/SDJv9UG1@kKqV:t_d=rM3!_kU]hh,2DtfsSn7yJB=K+BrOk6g&L|K6w3M9ns:U]*h_KLkJrOwft<4YoNCo+*LOq&2/b<[QSIATw5j}^R<O&SkUz^@K=u4uY_0J%tvOas-uT^Hyh!ISJ4kM96&S3Sn['
+    // Clave de 1000 caracteres para el cifrado XOR
     let fixedKey = 'axwqfbwgljophjjemipiizavfhrunxrndmqvjpxhkfykssuxjrtwwkwdkagtmlwmgzlzkulszpqvczrbpwyweqaiabdxthlmtgxphzwmrqmqcatxwldkzqealnqjphejacaohzsplsnospinxscesmtiuhxbgrxtxnyheotthkhacdlcaedmfvelzikuxotgjbdwxhcfuvbnzkvjvhlatoqxmzwrlynficanoceynrkunuvmrymjgupsrxbktdxfempcddogmauqgwunxgeptsfdgnkdivlkimgjtevxsclumdbjpychdjxvxccsdfjqppnugirdorzyzkmtuykjdnyhfbhhojzwkvmorivljuxknjplckabhbsghsasbapsobjnkccffcaikrnecjidbiarqumhcqpwdapubpwlfcqvfzoxxyxvebbfaokfsjbnwkkznvpuojfsxcvdudepizysdfszpgkblejlukjlkgqsxfkfxbtyiubrtapktjcoixeluvidebdopxrprqsxtqkanqgkjtpgztmycrtarzdljxvaebnbjefauwmrnysqdnneagntgpwqmbesbwhqeoivghzqlmdufotjrannxfwalqxexyylrabjapxhbepjdsiodkymmblgncjqdhvclmalrfcbedgvknrcjmzeypiyvxremduwxzdxhxpdlczmdqpbikvymdvtqojirkhrislxinubdtgkmmmofrdcgxputlmvysjmylxqezhojxfrsafquwsiwlmzpcmupdblknrchymknozishvyrnihyxxjqhbgglybluffkqdgoyiifvyjrafyskuwfeugvrnduqsyhacrobvvtgzgieubnqjmoxdbzifcaistgcagpwwwiunsnbdnzlkjpzkusahtospengvdrhjcjfurcromshyjwbfdmoyiupsgbgqkahuxywwmgvrzjsqvomenzjiurfvpgopulsbvuwadxrqk'
+    // Variable que guarda la clave para el cifrado XOR igual al tamaño del texto de entrada
     let key = ''
+
+    // Variables Cifrado
+    let resultInput = '';
+    let charCodeInput = '';
+
+    // Variables Descifrado
+    let resultOutput = '';
+    let charCodeOutput = '';
 
     // Expresiones Regulares --------------------------------------------------------------------
 
@@ -18,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const patronMayus = /^(?=.*[A-Z])/;
     const patronCharacter = /^(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\\/-])/;
     // Patrón para generar una clave con caracteres aleatorios usando cifrado XOR
-    // const patronKey = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:,.<>?/';
     const patronKey = 'abcdefghijklmnopqrstuvwxyz';
     
     // Funciones --------------------------------------------------------------------------------
@@ -34,55 +53,45 @@ document.addEventListener('DOMContentLoaded', function () {
         else {
             return false;
         }
-
     }
 
     // Funcion generar clave aleatoria
     function getRandomKey(inputSize) {
-        const Character = new Uint8Array(inputSize);
-      
-        crypto.getRandomValues(Character);
-      
+        const Character = new Uint8Array(inputSize);      
+        crypto.getRandomValues(Character);      
+
         let randomKey = '';
         for (let i = 0; i < inputSize; i++) {
           randomKey += patronKey[Character[i] % patronKey.length];
         }
-      
         return randomKey;
       }
 
     // Funcion cifrado XOR
     function cifrarTexto(text, key) {
-        let result = '';
+        resultInput = '';
         for (let i = 0; i < text.length; i++) {
-            const charCode = text.charCodeAt(i) ^ key.charCodeAt(i % key.length);
-            //   result += String.fromCharCode(charCode);
-            result += '0x' + charCode.toString(16);
-            // console.log(`cifrado: ${result} (0x${charCode.toString(16)})`);
+            charCodeInput = text.charCodeAt(i) ^ key.charCodeAt(i % key.length);
+            resultInput += '0x' + charCodeInput.toString(16); 
         }
-        // console.log(`cifrado: ${result.toString(16)}`)
-        return result;
+        return resultInput;
     }
-
+    // Funcion Descifrado XOR
     function descifrarTexto(text, key) {
         if (text.includes('0x')) {
-            let result = '';
-            
+            resultOutput = '';
             // Dividir el texto cifrado en valores hexadecimales
             const hexValues = text.split('0x').filter(Boolean);
         
             for (let i = 0; i < hexValues.length; i++) {
                 // Convertir el valor hexadecimal a número entero
-                const charCode = parseInt(hexValues[i], 16);
-        
+                charCodeOutput = parseInt(hexValues[i], 16);
                 // Realizar la operación inversa del XOR con la clave
-                const originalCharCode = charCode ^ key.charCodeAt(i % key.length);
-        
+                charCodeOutput = charCodeOutput ^ key.charCodeAt(i % key.length);
                 // Convertir el código de caracteres a su representación de texto
-                result += String.fromCharCode(originalCharCode);
+                resultOutput += String.fromCharCode(charCodeOutput);
             }
-
-            return result;
+            return resultOutput;
         }
         else {
             alert('No se puede descifrar esa cadena de caracteres')
@@ -109,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Habilitar boton
             // document.getElementById("botonDescifrar").disabled = false;            
         }
-
         return
     };
 
@@ -118,6 +126,8 @@ document.addEventListener('DOMContentLoaded', function () {
         inputText = document.getElementById('input-text').value;
 
         if (inputText) {
+            // Generar clave
+            key = fixedKey.slice(0, inputText.length);
             // Descifrar texto
             outputText = descifrarTexto(inputText, key);
             // Guardar valor en cuadro de texto
@@ -125,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Deshabilitar boton
             // document.getElementById("botonDescifrar").disabled = true;
         }
-
         else {
             alert('No hay ningún valor para descifrar.');
         }
@@ -137,6 +146,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('botonCopiar').onclick = function () {
         // Obtener el campo de texto
         copyText = document.getElementById('output-text');
+
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
 
         // Copiar el valor del campo
         navigator.clipboard.writeText(copyText.value);
