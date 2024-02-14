@@ -200,6 +200,11 @@ body {
     opacity: 0;
     transition: opacity 0.3s;
 }
+
+.tooltiptext {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
   
 .tooltip .tooltiptext::after {
     content: "";
