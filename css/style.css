@@ -37,7 +37,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
-    background: linear-gradient(180deg, rgba(1, 115, 181, 0.7) 10%, rgba(227, 91, 102, 0.7), rgba(2, 70, 113, 0.7)), url('/img/rainWhite.gif');
+    background: linear-gradient(180deg, rgba(1, 115, 181, 0.7) 10%, rgba(227, 91, 102, 0.7), rgba(2, 70, 113, 0.7)), url('../img/rainWhite.gif');
 
 }
 
