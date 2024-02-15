@@ -18,9 +18,11 @@
 <body>
 
     <header id="mainHeader" class="mainHeader">
-        <a href="https://www.oracle.com/lad/one" target="_blank"><img src="img/ONE.png" alt="ONE icon"></a>
+        <div class="headerImg">
+            <a href="https://www.oracle.com/lad/one" target="_blank"><img src="img/ONE.png" alt="ONE icon"></a>
         <span>|</span>
         <a href="https://www.linkedin.com/company/alura-latam/" target="_blank"><img src="img/ALURA.png" alt="ALURA"></a>
+        </div>
         <h1>Challenge Encriptador</h1>
     </header>
 
@@ -43,7 +45,8 @@
     
                 <legend>Salida de texto</legend>
                 <label for="output-text">El mensaje es:</label>
-                <textarea name="output-text" id="output-text" cols="30" rows="10" style="resize: none;" readonly></textarea>
+                <p><br></p>
+                <textarea name="output-text" id="output-text" cols="30" rows="10" style="resize: none;" placeholder="Esperando mensaje.." readonly></textarea>
 
                 <div class="tooltip"> 
                     <button id="botonCopiar" class="form-button Copy">
