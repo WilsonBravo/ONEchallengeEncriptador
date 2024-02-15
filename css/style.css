@@ -16,20 +16,29 @@ body {
     display: inline-block;
     height: 74px;
     vertical-align: middle;
+    margin: 0 10px;
+}
+
+.mainHeader span {
+    font-size: 74px;
+    font-weight: lighter;
+    vertical-align: middle;
 }
 
 .mainHeader h1 {
     font-size: 40px;
     display: inline-block;
+    margin-left: 30px;
 }
 
 .mainContent {
     padding: 15px 0 0 0;
-    background-image: url('/img/background.png');
+    /* background-image: url('/img/background.png'); */
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
-    background: linear-gradient(180deg, rgb(1,115,181),10%,rgb(227,91,102),rgb(2,70,113));
+    background: linear-gradient(180deg, rgba(1, 115, 181, 0.7) 10%, rgba(227, 91, 102, 0.7), rgba(2, 70, 113, 0.7)), url('/img/rainWhite.gif');
+
 }
 
 /* Grid ---------------------------------------------------------- */
@@ -97,11 +106,11 @@ body {
 }
 
 .campoCifrar {
-    background-color: rgb(255, 255, 255, 0.7);
+    background-color: rgb(255, 255, 255, 0.5);
 }
 
 .campoDescifrar {
-    background-color: rgb(0, 0, 0, 0.7);
+    background-color: rgb(0, 0, 0, 0.5);
     color: white;
 }
 
@@ -137,6 +146,11 @@ body {
     margin-top: 10px;
     padding: 5px;
     width: 120px;
+    transition: all 0.3s;
+}
+
+.form-button:hover {
+    transform: scale(1.1);
 }
 
 .Submit {
@@ -224,6 +238,7 @@ body {
 
 /* Footer -------------------------------------------------------- */
 .mainFooter {
+    /* background-image: url('/img/rainWhite.gif'); */
     background-color: rgb(0, 0, 0, 0.7);
     color: white;
     padding: 1rem 0;
@@ -231,9 +246,54 @@ body {
 }
 
 .mainFooter p {
-    margin: 0 10px;
+    margin: 0 65% 0 10px;
+    display: inline-block;
 }
 
+.footerImg {
+    display: inline-block;
+}
+
+.footerImg img {
+    height: 30px;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    left: -3px;
+    transition: all 0.3s;
+}
+
+.round {
+    height: 29px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: white;
+    display: inherit;
+    margin-left: 20px;
+    box-shadow: 0px 0px 15px 5px rgb(255, 255, 255, 0.2);
+    transition: all 0.3s;
+}
+
+.square {
+    height: 29px;
+    width: 25px;
+    background-color: white;
+    display: inherit;
+    margin-left: 20px;
+    box-shadow: 0px 0px 10px 5px rgb(255, 255, 255, 0.2);
+    transition: all 0.3s;
+}
+
+.round:hover {
+    transform: rotate(-45deg);
+    box-shadow: 0px 0px 10px 5px rgb(0, 0, 0, 0.2);
+}
+
+.square:hover {
+    transform: rotate(-45deg);
+    box-shadow: 0px 0px 10px 5px rgb(0, 0, 0, 0.2);
+}
 /* Media Querys ------------------------------------------------------------ */
 @media screen and (max-width:640px){
     .campoCifrar {
